@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Numerics;
+using System.Security.Cryptography;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -7,7 +9,6 @@ namespace Zelda;
 public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
-    private SpriteBatch _spriteBatch;
 
     public Game1()
     {
@@ -19,6 +20,8 @@ public class Game1 : Game
     protected override void Initialize()
     {
         // TODO: Add your initialization logic here
+        _playerTexture = new Texture2D(_graphics, 1,1); 
+        _playerPosition = Vector2.Zero; 
 
         base.Initialize();
     }
@@ -43,9 +46,9 @@ public class Game1 : Game
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
-
+        _spriteBatch.Begin();
         // TODO: Add your drawing code here
-
+        _spriteBatch.End();
         base.Draw(gameTime);
     }
 }
