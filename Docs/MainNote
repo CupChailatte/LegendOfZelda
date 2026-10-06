@@ -1,0 +1,25 @@
+Remeber why you started 
+
+
+Main Architecture : 
+- Composition OOP 
+
+Principles: 
+- Single Responsibility 
+
+
+Dependency Injection? When and why? 
+
+Event Handling :
+- Event Bus 
+- Observer Pattern 
+
+Instead of organizing by noun, organize by the verbs: 
+- Entity Manager
+- CollisionManager 
+- InputManager
+- AssetLoader/GameAsset
+- SpriteRenderer
+
+Object Pooling: Projectiles 
+

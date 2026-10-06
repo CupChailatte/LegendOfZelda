@@ -1,0 +1,45 @@
+MittSpel/
+│
+├── Content/                           # MonoGame Content Pipeline (.mgcb)
+│   ├── Audio/                         # Ljudeffekter och musik (.wav, .ogg)
+│   ├── Fonts/                         # SpriteFonts (.spritefont)
+│   └── Textures/                      # Sprites, spritesheets (.png)
+│
+├── Source/
+│   ├── Core/                          # Kärnklasser för arkitekturen
+│   │   ├── Entity.cs                  # Entity-klassen (container för komponenter)
+│   │   ├── IComponent.cs              # Grundgränssnittet för alla komponenter
+│   │   ├── IUpdateableComponent.cs    # (Valfritt) Komponenter som kör Update()
+│   │   └── IDrawableComponent.cs      # (Valfritt) Komponenter som kör Draw()
+│   │
+│   ├── Components/                    # Alla återanvändbara komponenter (uppdelat efter ansvar)
+│   │   ├── Graphics/
+│   │   │   ├── SpriteRenderer.cs      # Ritar en enkel Texture2D
+│   │   │   └── AnimatedSprite.cs      # Hanterar spritesheets och bildrutor
+│   │   ├── Movement/
+│   │   │   ├── PlayerInputMovement.cs # Läser tangentbord/kontroll
+│   │   │   ├── HorizontalPatrol.cs    # Enkel patrullerings-AI
+│   │   │   └── VelocityComponent.cs   # Hanterar hastighet/acceleration
+│   │   ├── Physics/
+│   │   │   ├── BoxCollider.cs         # BoundingBox / rektanglar
+│   │   │   └── CircleCollider.cs
+│   │   └── Gameplay/
+│   │       ├── Health.cs              # HP, ta skada, död
+│   │       └── Lifetime.cs            # För t.ex. projektiler som ska försvinna
+│   │
+│   ├── Entities/                      # "Fabriker" eller presets för att bygga objekt
+│   │   ├── EntityFactory.cs           # Skapar färdiga entiteter (Player, Enemy, Bullet)
+│   │   └── EntityManager.cs           # Håller koll på alla aktiva entiteter, pooling m.m.
+│   │
+│   ├── Systems/                       # Hanterar logik som berör flera entiteter samtidigt
+│   │   ├── CollisionSystem.cs         # Jämför colliders mellan entiteter
+│   │   └── RenderSystem.cs            # (Om du vill sortera sprites i lager/djup)
+│   │
+│   └── Scenes/                        # Spelscener / States
+│       ├── IScene.cs
+│       ├── SceneManager.cs
+│       ├── MenuScene.cs
+│       └── GameplayScene.cs
+│
+├── Game1.cs                           # MonoGame entry point (initierar Game, SpriteBatch, SceneManager)
+└── Program.cs                         # Standard .NET Main-metod
