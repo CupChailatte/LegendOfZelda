@@ -8,10 +8,12 @@ namespace CoreLibrary;
 public class GameAssets
 {
     public static Texture2D PlayerSprite {get; private set;}
+    public static Texture2D EnemySprite {get; private set;}
 
 
     public void LoadTextureAssets(ContentManager content)
     {
         PlayerSprite = content.Load<Texture2D>("PlayerSprite/Link_1"); 
+        EnemySprite = content.Load<Texture2D>("EnemySprite/skelett"); 
     }
 }

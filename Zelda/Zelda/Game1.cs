@@ -44,7 +44,9 @@ public class Game1 : Game
         _GameAssets.LoadTextureAssets(Content);
         
         Entity player = _EntityCreator.CreatePlayer(new Vector2(30, 40));
+        Entity enemy1 = _EntityCreator.CreateEnemy1(new Vector2(59,59)); 
         _entities.Add(player);
+        _entities.Add(enemy1); 
 
 
     }

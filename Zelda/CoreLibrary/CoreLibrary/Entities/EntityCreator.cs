@@ -18,4 +18,11 @@ public class EntityCreator
     return player; 
   }
 
+  public Entity CreateEnemy1(Vector2 enemyPos)
+  {
+    Entity enemy1 = new Entity{Position = enemyPos}; 
+    enemy1.AddComponent(new SpriteRenderer(GameAssets.EnemySprite)); 
+    return enemy1; 
+  }
+
 };
