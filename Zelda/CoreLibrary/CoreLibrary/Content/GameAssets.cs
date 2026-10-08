@@ -16,7 +16,6 @@ public static class GameAssets
     {
         PlayerSprite = content.Load<Texture2D>("PlayerSprite/Link_1"); 
         EnemySprite = content.Load<Texture2D>("EnemySprite/skelett");
-
         FloorSprite = content.Load<Texture2D>("MapSprite/grass");  
     }
 }

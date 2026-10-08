@@ -55,7 +55,7 @@ public class TileMap
         {
             for (int col = 0; col < MapWidth; col++)
             {
-                int tileId = _mapData[row, col]; 
+                int tileId = _mapData[row, col]; // row = y, col = x 
 
                 if (tileId < 0) continue; // skips empty tiles
 
