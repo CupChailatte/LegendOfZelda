@@ -1,4 +1,4 @@
-namespace CoreLibrary.Movement;  
+namespace CoreLibrary.Components.Movement;
 public enum Direction
 {
     None, 
