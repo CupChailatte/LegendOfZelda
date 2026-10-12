@@ -11,8 +11,8 @@ public class TileMap
     private readonly Texture2D _tileSet;
     private readonly int _tileWidth, _tileHeight, _tilesPerRow;
     private int[,] _mapData;
-    private int MapWidth => _mapData.GetLength(1); 
-    private int MapHeight => _mapData.GetLength(0); 
+    private int MapWidth => _mapData.GetLength(1); // x
+    private int MapHeight => _mapData.GetLength(0);// y
 
     public TileMap(Texture2D tileset, int tileWidth, int tileHeight)
     {
@@ -25,19 +25,19 @@ public class TileMap
 
     public void LoadFromCSV(string filePath)
     {
-        var linesList = new List<string[]>();
+        var linesList = new List<string[]>(); // List av char/string från txt filen 
 
-        using var reader = new StreamReader(filePath);
+        using var reader = new StreamReader(filePath); //läsaren
         while (!reader.EndOfStream)
         {
-            string line = reader.ReadLine();
+            string line = reader.ReadLine(); // läsare
             if (!string.IsNullOrWhiteSpace(line))
             {
                 linesList.Add(line.Split(',', StringSplitOptions.TrimEntries));
             }
         }
-        int height = linesList.Count;
-        int width = linesList[0].Length;
+        int height = linesList.Count; // y värde 
+        int width = linesList[0].Length; // x värde 
         _mapData = new int[height, width]; 
 
         for (int y = 0; y < height; y++)
@@ -81,7 +81,7 @@ public class TileMap
                     
                 
             }
-        }
+        }    
         
     }
 
