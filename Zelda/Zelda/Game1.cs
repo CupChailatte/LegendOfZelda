@@ -15,6 +15,8 @@ public class Game1 : Game
     public Vector2 Position = new Vector2(400, 400);
     private TileMap _tileMap; 
     private Texture2D _floorTexture; 
+    private const int _resolutionWidth = 1024; 
+    private const int _resolutionHeight = 960; 
 
 
     public Game1()
@@ -23,8 +25,8 @@ public class Game1 : Game
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
 
-        _graphics.PreferredBackBufferWidth = 256;
-        _graphics.PreferredBackBufferHeight = 240;
+        _graphics.PreferredBackBufferWidth = _resolutionWidth;
+        _graphics.PreferredBackBufferHeight = _resolutionHeight;
         _graphics.ApplyChanges();
     }
 
